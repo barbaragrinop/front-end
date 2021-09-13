@@ -1,8 +1,22 @@
 @charset "UTF-8";
-/* COLORS:
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485 */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /* font para alterar tudo de uma vez. esse valor * 16px q é o tamanho padrao da font = 10px q é o a gente quer*/ }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  /* desenconsta de cima */
+  color: #777;
+  padding: 3rem; }
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -32,24 +46,18 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* desenha formas */
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-/* .logo:hover{
-
-} */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -57,24 +65,22 @@ body {
   backface-visibility: hidden;
   /* evita q a parte de trás do elemento seja escondida p não dar erro */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* anim */
-  /* animation-iteration-count: 3; qntas vezes qr q aconteça */
-  /* animation-delay: 3s; */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 1.74rem;
-  font-weight: 400;
-  letter-spacing: 1.93rem;
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* anim */
+    /* animation-iteration-count: 3; qntas vezes qr q aconteça */
+    /* animation-delay: 3s; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 1.74rem;
+    font-weight: 400;
+    letter-spacing: 1.93rem;
+    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   /* em cada momento da animação */
@@ -107,8 +113,7 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   /*  */
   text-transform: uppercase;
   text-decoration: none;
@@ -125,16 +130,16 @@ body {
   transform: translateY(-0.4rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* quao distante vc quer(diagonal), quao longe o borrao(horizontal down), quao forte o borrao */ }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* aumenta o tamanho */
+    opacity: 0; }
 
 .btn:active {
   /* qnd clica */
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   /* quao distante vc quer(diagonal), quao longe o borrao(horizontal down), quao forte o borrao */ }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
 
 .btn::after {
   content: "";
@@ -149,16 +154,14 @@ body {
   /* coloca p trás do botao   */
   transition: all .2s; }
 
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* aumenta o tamanho */
-  opacity: 0; }
-
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   /* nome, tempo, função de tempo da animação, tempo do delay   */
   animation-fill-mode: backwards;
   /* aplica tudo em 0% antes do inicio da animação  */ }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
