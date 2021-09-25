@@ -1,0 +1,57 @@
+.composition{
+    position: relative;
+    margin-left: 20%;
+
+    > p{
+        background-color: $color-grey-light-1;
+        color: $color-grey-light-1;
+    }
+
+    &__photo{
+        width: 55%;
+        height: 35rem;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        position: absolute;
+        transition: all .2s;
+        z-index: 10;
+        border-radius: 1rem;
+        outline-offset: 2rem;
+
+        &--p1{
+            left: 0rem;
+            top: 3rem;
+            transform: rotate(-22deg);
+        }
+
+        &--p2{
+            left: 2rem;
+            top: 2rem;
+            transform: rotate(-14deg);
+        }
+
+        &--p3{
+            left: 4rem;
+            top: 1rem;
+            transform: rotate(-7deg);
+        }
+
+        &--p4{
+            left: 6rem;
+            top: 0rem;
+            transform: rotate(0deg);
+        }
+
+        &:hover{ 
+            outline: .5rem solid $color-grey-light-2; //esse o outline offset definem as bordas
+            transform: scale(1.05) translateY(-.5rem); //aumenta em escala e no y
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .05);
+            z-index: 20;
+        }
+    }
+
+    &:hover &__photo:not(:hover){ //pegando as fotos q não estao com o hover e dimuindo seus tamanhos
+        transform: scale(.9);
+    }
+}
+
