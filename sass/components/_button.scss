@@ -1,6 +1,6 @@
 
 .btn{
-
+    &,
     &:link, /*  */
     &:visited{ /*  */
         text-transform: uppercase;
@@ -11,6 +11,9 @@
         transition: all .3s;
         position: relative;
         font-size: $default-font-size;
+
+        border: none;
+        cursor: pointer;
     }
 
     &:hover{ /* qnd passa o mouse */
@@ -23,7 +26,8 @@
         }
     }
 
-    &:active{  /* qnd clica */
+    &:active, &:focus{  /* qnd clica */
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* quao distante vc quer(diagonal), quao longe o borrao(horizontal down), quao forte o borrao */
     }
